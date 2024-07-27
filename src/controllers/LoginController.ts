@@ -41,4 +41,10 @@ class LoginController {
     //   res.send('You must provide an email');
     // }
   }
+
+  @get('/logout')
+  getLogout(req: Request, res: Response) {
+    req.session = undefined;
+    res.redirect('/');
+  }
 }
